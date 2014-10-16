@@ -20,5 +20,10 @@ describe "StaticPages" do
     it {should have_content('Acerca de')}
     it {should have_title('Sample App / Pagina acerca de')}
   end
+  describe "Pagina de Contacto" do
+    before { visit contacto_path }
+    it {should have_content('Contacto')}
+    it {should have_title('Sample App / Pagina de contacto')}
+  end
 
 end
