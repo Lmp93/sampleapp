@@ -16,7 +16,6 @@ describe "UsersPages" do
   describe "Registro" do
   	before { visit registro_path }
   	let(:submit) { "Crear mi cuenta" }
-  end
   	describe "con informacion invalida" do
   		it "no debe crear al usuario" do
   			expect { click_button submit }.not_to change(User, :count)
@@ -27,11 +26,12 @@ describe "UsersPages" do
   		before do
   			fill_in "Name",			with: "Usuario ejemplo"
   			fill_in "Email",		with: "user@ejemplo.com"
-  			fill_in "password",		with: "password"
+  			fill_in "Password",		with: "password"
   			fill_in "Confirmation", with: "password"
   		end
   		it "debe crear un usuario" do
   			expect { click_button submit }.to change(User, :count).by(1)
   		end
   	end
+  end
 end
