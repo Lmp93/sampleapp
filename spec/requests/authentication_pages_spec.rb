@@ -17,7 +17,7 @@ describe "Authentication" do
 	 	describe "con informacion invlida" do
 	 		before {click_button "Ingreso"}
 
-	 		it { should have_tittle 'Ingreso'}
+	 		it { should have_title 'Ingreso'}
 	 		it { should have_selector('div.alert.alert-error') }
 	 	end
 
@@ -31,7 +31,7 @@ describe "Authentication" do
 
 	 		it { should have_title(user.name) }
 	 		it {should have_link('Perfil', href: user_path(user)) }
-	 		it { should have_link('Salida', href: salida_path) }
+	 		it { should have_link('Salir', href: salida_path) }
 	 		it { should_not have_link('Ingreso', href:ingreso_path) }
 	 	end
 	end
